@@ -5,7 +5,7 @@ PyTorch implementation for [Learning with Twin Noisy Labels for Visible-Infrared
 ## Introduction
 
 ### DART framework
-<img src="https://github.com/XLearning-SCU/2022-CVPR-DART/blob/main/figs/framework.png"  width="860" height="268" />
+<img src="https://github.com/XLearning-SCU/2022-CVPR-DART/blob/main/figs/framework.png"  width="760" height="268" />
 
 ## Requirements
 

@@ -182,8 +182,39 @@ def set_requires_grad(nets, requires_grad=False):
                 if net is not None:
                     for param in net.parameters():
                         param.requires_grad = requires_grad
+def plot_pair_distribution(type, X, clean_index, noisy_index, save_path=''):
+    plt.clf()
+    ax = plt.gca()
 
+    font1 = {'family': 'Times New Roman',
+             'weight': 'normal',
+             'size': 13,
+             }
 
+    # Plot data histogram
+    if type == 0:
+        ax.hist(X[clean_index], bins=100, density=True, histtype='stepfilled', color='darkorchid', alpha=0.3,
+                label='True Pos. Pairs')
+        ax.hist(X[noisy_index], bins=100, density=True, histtype='stepfilled', color='blue', alpha=0.3,
+                label='False Pos. Pairs')
+    if type == 1:
+        ax.hist(X[clean_index], bins=100, density=True, histtype='stepfilled', color='teal', alpha=0.3,
+                label='True Neg. Pairs')
+        ax.hist(X[noisy_index], bins=100, density=True, histtype='stepfilled', color='peru', alpha=0.3,
+                label='False Neg. Pairs')
+
+    ax.set_xlabel('Normalized Distances', fontdict=font1)
+    ax.set_ylabel('Frequency', fontdict=font1)
+    x_ticks = np.array([0.0, 0.2, 0.4, 0.6, 0.8, 1.0])
+    plt.xticks(x_ticks)
+    plt.tick_params(labelsize=11)
+    ax.legend(loc='upper left', prop=font1)
+
+    if save_path:
+        plt.savefig(save_path, dpi=300)
+    else:
+        plt.show()
+                        
 class AllSampler(Sampler):
     def __init__(self, dataset, train_color_label, train_thermal_label, shuffle=True):
         N1 = len(train_color_label)

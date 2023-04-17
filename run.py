@@ -310,7 +310,7 @@ def eval_train(net, dataloader, type):
 
             for n1 in range(input2.size(0)):
                 losses_V_aug1[index_V[n1]] = loss1[n1]
-                losses_V_aug2[index_V[n1 + 32]] = loss1[n1 + 32]
+                losses_V_aug2[index_V[n1 + loader_batch]] = loss1[n1 + loader_batch]
             for n2 in range(input2.size(0)):
                 losses_I[index_I[n2]] = loss2[n2]
 

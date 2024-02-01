@@ -37,10 +37,10 @@ Modify the  ```data_path``` and ```model_path``` to evaluate the trained model.
 
 ```
 # SYSU-MM01: mode = {all, indoor}
-python test.py --gpu 0 --dataset sysu --data-path data-path --model_path model_path --resume-net1 'sysu_dart_nr20_net1.t' resume-net2 'sysu_dart_nr20_net2.t' --mode all
+python test.py --gpu 0 --dataset sysu --data-path data-path --model_path model_path --resume-net1 'sysu_dart_nr20_net1.t' --resume-net2 'sysu_dart_nr20_net2.t' --mode all
 
 # RegDB: --tvsearch or not (whether thermal to visible search)
-python test.py --gpu 0 --dataset regdb --data-path data-path --model_path model_path --resume-net1 'regdb_dart_nr20_trial{}_net1.t' resume-net2 'regdb_dart_nr20_trial{}_net2.t'
+python test.py --gpu 0 --dataset regdb --data-path data-path --model_path model_path --resume-net1 'regdb_dart_nr20_trial{}_net1.t' --resume-net2 'regdb_dart_nr20_trial{}_net2.t'
 ```
 
 
